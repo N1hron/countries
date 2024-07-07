@@ -1,0 +1,65 @@
+@use './components/normalize';
+@use './components/typography';
+@use './components/themes';
+@use './components/mixins';
+
+:root {
+    --ff: 'Nunito Sans', sans-serif;
+    --fs-sm: 0.875rem;
+    --fs-md: 1rem;
+    --fw-light: 300;
+    --fw-bold: 600;
+    --fw-bolder: 800;
+    --shadow: 0px 0px 0.4rem 0px #2424245c;
+}
+
+body {
+    background-color: var(--background);
+    font-family: var(--ff);
+    color: var(--text);
+
+    -webkit-font-smoothing: antialiased;
+}
+
+body[data-theme='dark'] {
+    @include mixins.set-theme(themes.$dark);
+}
+
+body[data-theme='light'] {
+    @include mixins.set-theme(themes.$light);
+}
+
+*,
+*::after,
+*::before {
+    margin: 0;
+    line-height: 1.5;
+    box-sizing: border-box;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+    display: block;
+    max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    overflow-wrap: break-word;
+    hyphens: auto;
+}
