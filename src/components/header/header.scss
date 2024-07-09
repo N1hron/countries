@@ -1,0 +1,15 @@
+.header {
+    background-color: var(--elements);
+    box-shadow: var(--shadow);
+    padding: 1.3rem 0;
+
+    &__container {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__title {
+        font-weight: var(--fw-bolder);
+        font-size: var(--fs-xl);
+    }
+}

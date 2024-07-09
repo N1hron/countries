@@ -7,6 +7,7 @@
     --ff: 'Nunito Sans', sans-serif;
     --fs-sm: 0.875rem;
     --fs-md: 1rem;
+    --fs-xl: 1.25rem;
     --fw-light: 300;
     --fw-bold: 600;
     --fw-bolder: 800;
@@ -62,4 +63,9 @@ h5,
 h6 {
     overflow-wrap: break-word;
     hyphens: auto;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
 }
