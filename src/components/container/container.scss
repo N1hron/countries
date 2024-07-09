@@ -1,0 +1,8 @@
+$width: 72rem;
+$inline-padding: 1rem;
+
+.container {
+    max-width: calc($width + $inline-padding * 2);
+    padding: 0 $inline-padding;
+    margin: 0 auto;
+}
