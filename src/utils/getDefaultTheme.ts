@@ -1,7 +1,7 @@
 import { Theme } from '../types';
 import { isTheme } from '../typeguards';
 
-function getInitialTheme(): Theme {
+function getDefaultTheme(): Theme {
     const savedTheme = window.localStorage.getItem('theme');
     const preferredTheme: Theme = window.matchMedia(
         '(prefers-color-scheme: dark)'
@@ -13,4 +13,4 @@ function getInitialTheme(): Theme {
     else return preferredTheme;
 }
 
-export default getInitialTheme;
+export default getDefaultTheme;
