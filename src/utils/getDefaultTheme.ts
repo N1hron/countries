@@ -1,5 +1,5 @@
 import { Theme } from '../types/theme';
-import { isTheme } from '../typeguards';
+import { isTheme } from '../typeguards/isTheme';
 
 function getDefaultTheme(): Theme {
     const savedTheme = window.localStorage.getItem('theme');
