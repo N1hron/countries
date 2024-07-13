@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 
-import { useAppDispatch, useAppSelector } from '../store/hooks';
+import { useAppDispatch, useAppSelector } from '../store';
 import { setTheme } from '../store/slices/themeSlice';
 import { selectTheme } from '../store/slices/themeSlice/selectors';
 

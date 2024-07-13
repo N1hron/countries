@@ -1,4 +1,4 @@
-import { Theme } from '../types';
+import { Theme } from '../types/theme';
 import { isTheme } from '../typeguards';
 
 function getDefaultTheme(): Theme {
