@@ -2,10 +2,14 @@ import { configureStore } from '@reduxjs/toolkit';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { themeReducer } from './slices/themeSlice';
+import { countriesReducer } from './slices/countriesSlice';
+import { api } from '../api';
 
 const store = configureStore({
-    reducer: { theme: themeReducer },
+    reducer: { theme: themeReducer, countries: countriesReducer },
     devTools: import.meta.env.DEV,
+    middleware: (getDefaultMiddleware) =>
+        getDefaultMiddleware({ thunk: { extraArgument: { api } } }),
 });
 
 export default store;
