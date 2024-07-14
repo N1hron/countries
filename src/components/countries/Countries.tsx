@@ -5,7 +5,7 @@ import CountryCard from './CountryCard';
 import './countries.scss';
 
 function Countries() {
-    const [status, countries] = useCountries();
+    const [status, countries, limit] = useCountries();
 
     return (
         <Container>
