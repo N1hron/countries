@@ -1,0 +1,49 @@
+.countries {
+    margin-top: 2.75rem;
+
+    &__country-card {
+        $width: 15rem;
+
+        max-width: $width;
+        background-color: var(--elements);
+        box-shadow: var(--shadow);
+        border-radius: 0.25rem;
+        overflow: hidden;
+
+        &-flag {
+            height: $width * 0.6;
+            width: 100%;
+
+            object-fit: cover;
+            object-position: center;
+        }
+
+        &-info {
+            padding: 1.25rem 1.25rem 2.75rem;
+
+            &-title {
+                font-size: var(--fs-xl);
+                margin-bottom: 1rem;
+            }
+
+            &-items {
+                list-style: none;
+                padding: 0;
+
+                display: flex;
+                flex-direction: column;
+                gap: 0.25rem;
+            }
+
+            &-item {
+                font-size: var(--fs-sm);
+                font-weight: var(--fw-bold);
+
+                span {
+                    font-weight: var(--fw-light);
+                    opacity: 0.8;
+                }
+            }
+        }
+    }
+}
