@@ -1,17 +1,24 @@
 .countries {
-    margin-top: 2.75rem;
+    $card-width: 15rem;
+
+    padding: 2.75rem 0;
+
+    &__country-cards {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, $card-width);
+        justify-content: center;
+        gap: 4rem;
+    }
 
     &__country-card {
-        $width: 15rem;
-
-        max-width: $width;
+        max-width: $card-width;
         background-color: var(--elements);
         box-shadow: var(--shadow);
         border-radius: 0.25rem;
         overflow: hidden;
 
         &-flag {
-            height: $width * 0.6;
+            height: $card-width * 0.6;
             width: 100%;
 
             object-fit: cover;
