@@ -1,5 +1,13 @@
-@mixin set-theme($theme) {
+@mixin set-theme($theme, $is-dark: false) {
     @each $name, $color in $theme {
         --#{$name}: #{$color};
+    }
+
+    @if $is-dark {
+        --elements-dark: hsl(from var(--elements) h s calc(l - 2));
+        --elements-darker: hsl(from var(--elements) h s calc(l - 3));
+    } @else {
+        --elements-dark: hsl(from var(--elements) h s calc(l - 4));
+        --elements-darker: hsl(from var(--elements) h s calc(l - 6));
     }
 }

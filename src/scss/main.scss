@@ -29,7 +29,7 @@ body {
 }
 
 body[data-theme='dark'] {
-    @include mixins.set-theme(themes.$dark);
+    @include mixins.set-theme(themes.$dark, true);
 }
 
 body[data-theme='light'] {
