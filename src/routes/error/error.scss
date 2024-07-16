@@ -1,0 +1,15 @@
+.error {
+    min-height: 100dvh;
+    padding: 1rem;
+
+    display: flex;
+    flex-direction: column;
+
+    &__container {
+        margin: auto;
+
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+}
