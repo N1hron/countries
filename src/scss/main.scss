@@ -2,17 +2,22 @@
 @use './components/typography';
 @use './components/themes';
 @use './components/mixins';
+@use './components/animations';
 
 :root {
     --ff: 'Nunito Sans', sans-serif;
     --fs-sm: 0.875rem;
     --fs-md: 1rem;
     --fs-xl: 1.25rem;
+    --fs-xxl: 2rem;
     --fw-light: 300;
     --fw-bold: 600;
     --fw-bolder: 800;
     --shadow: 0px 0px 0.4rem 0px #2424245c;
     --br: 0.25rem;
+    --error: hsl(0, 59%, 43%);
+    --success: hsl(132, 59%, 43%);
+    --info: hsl(221, 59%, 43%);
 }
 
 body {

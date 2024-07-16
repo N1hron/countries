@@ -1,0 +1,22 @@
+.status-icon {
+    width: 5rem;
+    height: 5rem;
+
+    fill: var(--text);
+
+    &_error {
+        fill: var(--error);
+    }
+
+    &_success {
+        fill: var(--success);
+    }
+
+    &_idle {
+        fill: var(--info);
+    }
+
+    &_loading {
+        animation: rotate 1s linear infinite;
+    }
+}
