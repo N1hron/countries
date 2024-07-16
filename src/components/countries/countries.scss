@@ -14,7 +14,7 @@
         max-width: $card-width;
         background-color: var(--elements);
         box-shadow: var(--shadow);
-        border-radius: 0.25rem;
+        border-radius: var(--br);
         overflow: hidden;
 
         &-flag {
