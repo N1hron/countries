@@ -1,0 +1,44 @@
+.status-message {
+    $padding: 1.5rem;
+    $gap: 1rem;
+    $svg-padding: 0.46875rem;
+
+    $actual-padding: $padding - $svg-padding;
+    $actual-gap: $gap - $svg-padding;
+
+    background-color: var(--elements);
+    box-shadow: var(--shadow);
+    border-radius: var(--br);
+    width: fit-content;
+    max-width: 20rem;
+    text-align: center;
+    padding: $actual-padding;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: $actual-gap;
+
+    &__status {
+        display: flex;
+        gap: $actual-gap;
+        align-items: center;
+        justify-content: center;
+    }
+
+    &__icon {
+        width: 3rem;
+        height: 3rem;
+    }
+
+    &__code {
+        font-size: var(--fs-xxl);
+        font-weight: var(--fw-bolder);
+        margin-right: $padding - $actual-padding;
+    }
+
+    &__text {
+        margin: 0 $padding - $actual-padding $padding - $actual-padding;
+        line-height: 1;
+    }
+}
