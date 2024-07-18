@@ -10,14 +10,27 @@ type State = {
     limit: number;
 };
 
-const initialState: State = { entities: [], status: 'idle', limit: 8 };
+const initialState: State = {
+    entities: [],
+    status: 'idle',
+    limit: 0,
+};
 
 const countriesSlice = createSlice({
     name: 'countries',
     initialState,
     reducers: {
         setLimit(state, action: PayloadAction<number>) {
-            state.limit = action.payload;
+            const newLimit = action.payload;
+            const maxLimit = state.entities.length;
+
+            if (newLimit > maxLimit) {
+                state.limit = maxLimit;
+            } else if (newLimit < 1) {
+                state.limit = 1;
+            } else {
+                state.limit = newLimit;
+            }
         },
     },
     extraReducers: (builder) => {
@@ -31,6 +44,7 @@ const countriesSlice = createSlice({
             .addCase(fetchAllCountries.fulfilled, (state, action) => {
                 state.status = 'success';
                 state.entities = action.payload;
+                state.limit = Math.min(8, action.payload.length);
             });
     },
 });
