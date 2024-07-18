@@ -1,10 +1,8 @@
 import { Country } from '../types/countries';
-import { baseUrl } from './config';
+import { getAllUrl } from './config';
 
 async function getAllCountries() {
-    const url = `${baseUrl}all`;
-
-    const response = await fetch(url);
+    const response = await fetch(getAllUrl);
 
     if (response.ok) {
         const json = (await response.json()) as Country[];
