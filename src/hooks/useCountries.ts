@@ -22,11 +22,22 @@ function useCountries() {
 
     function increaseLimit(n: number = 8) {
         if (limit < countries.length) {
-            dispatch(setLimit(limit + n));
+            if (countries.length - limit > n) {
+                dispatch(setLimit(limit + n));
+            } else {
+                dispatch(setLimit(countries.length));
+            }
         }
     }
 
-    return [status, countries, limit, increaseLimit] as const;
+    const res = {
+        status,
+        countries: countries.slice(0, limit),
+        limit: { current: limit, max: countries.length },
+        increaseLimit,
+    };
+
+    return [res.status, res.countries, res.limit, res.increaseLimit] as const;
 }
 
 export default useCountries;

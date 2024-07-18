@@ -10,19 +10,13 @@ function Countries() {
     const [status, countries, limit, increaseLimit] = useCountries();
 
     function renderCountries() {
-        return countries
-            .slice(0, limit)
-            .map((country) => (
-                <CountryCard key={country.nativeName} country={country} />
-            ));
-    }
-
-    function showMore() {
-        increaseLimit();
+        return countries.map((country) => (
+            <CountryCard key={country.nativeName} country={country} />
+        ));
     }
 
     const statusText = status === 'error' ? 'Could not load countries' : '';
-    const canShowMore = limit < countries.length;
+    const canShowMore = limit.current < limit.max;
 
     return (
         <div className='countries'>
@@ -35,7 +29,7 @@ function Countries() {
                         {canShowMore && (
                             <Button
                                 isLink={false}
-                                onClick={showMore}
+                                onClick={() => increaseLimit()}
                                 className='countries__show-more-btn'
                             >
                                 Show more
