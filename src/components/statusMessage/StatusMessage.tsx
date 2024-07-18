@@ -10,11 +10,20 @@ type Props = {
     statusCode?: number;
     statusText?: string;
     style?: CSSProperties;
+    className?: string;
 };
 
-function StatusMessage({ status, statusCode, statusText, style }: Props) {
+function StatusMessage({
+    status,
+    statusCode,
+    statusText,
+    style,
+    className = '',
+}: Props) {
+    const cn = ('status-message ' + className).trim();
+
     return (
-        <div style={style} className='status-message'>
+        <div style={style} className={cn}>
             <div className='status-message__status'>
                 <StatusIcon status={status} className='status-message__icon' />
                 {statusCode && (
