@@ -2,6 +2,16 @@
     $card-width: 15rem;
 
     padding: 2.75rem 0;
+    flex-grow: 1;
+
+    &:has(.countries__status-message) {
+        display: flex;
+        align-items: center;
+    }
+
+    .countries__status-message {
+        margin: 0 auto;
+    }
 
     &__country-cards {
         display: grid;
