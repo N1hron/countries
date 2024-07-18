@@ -1,7 +1,7 @@
 import useCountries from '../../hooks/useCountries';
 import Container from '../container/Container';
 import StatusMessage from '../statusMessage/StatusMessage';
-import CountryCard from './CountryCard';
+import CountryCard from '../countryCard/CountryCard';
 import Button from '../button/Button';
 
 import './countries.scss';

@@ -1,6 +1,4 @@
 .countries {
-    $card-width: 15rem;
-
     padding: 2.75rem 0;
     flex-grow: 1;
 
@@ -20,52 +18,8 @@
 
     &__country-cards {
         display: grid;
-        grid-template-columns: repeat(auto-fit, $card-width);
+        grid-template-columns: repeat(auto-fit, 15rem);
         justify-content: center;
         gap: 4rem;
-    }
-
-    &__country-card {
-        max-width: $card-width;
-        background-color: var(--elements);
-        box-shadow: var(--shadow);
-        border-radius: var(--br);
-        overflow: hidden;
-
-        &-flag {
-            height: $card-width * 0.6;
-            width: 100%;
-
-            object-fit: cover;
-            object-position: center;
-        }
-
-        &-info {
-            padding: 1.25rem 1.25rem 2.75rem;
-
-            &-title {
-                font-size: var(--fs-xl);
-                margin-bottom: 1rem;
-            }
-
-            &-items {
-                list-style: none;
-                padding: 0;
-
-                display: flex;
-                flex-direction: column;
-                gap: 0.25rem;
-            }
-
-            &-item {
-                font-size: var(--fs-sm);
-                font-weight: var(--fw-bold);
-
-                span {
-                    font-weight: var(--fw-light);
-                    opacity: 0.8;
-                }
-            }
-        }
     }
 }

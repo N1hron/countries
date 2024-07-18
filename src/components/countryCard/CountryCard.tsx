@@ -1,31 +1,31 @@
 import { Country } from '../../types/countries';
 import formatPopulation from '../../utils/formatPopulation';
 
+import './countryCard.scss';
+
 type Props = {
     country: Country;
 };
 
 function CountryCard({ country }: Props) {
     return (
-        <article className='countries__country-card'>
+        <article className='country-card'>
             <img
-                className='countries__country-card-flag'
+                className='country-card__flag'
                 src={country.flag}
                 alt={country.name}
             />
-            <div className='countries__country-card-info'>
-                <h3 className='countries__country-card-info-title'>
-                    {country.name}
-                </h3>
-                <ul className='countries__country-card-info-items'>
-                    <li className='countries__country-card-info-item'>
+            <div className='country-card__info'>
+                <h3 className='country-card__info-title'>{country.name}</h3>
+                <ul className='country-card__info-items'>
+                    <li className='country-card__info-item'>
                         Population:{' '}
                         <span>{formatPopulation(country.population)}</span>
                     </li>
-                    <li className='countries__country-card-info-item'>
+                    <li className='country-card__info-item'>
                         Region: <span>{country.region}</span>
                     </li>
-                    <li className='countries__country-card-info-item'>
+                    <li className='country-card__info-item'>
                         Capital: <span>{country.capital}</span>
                     </li>
                 </ul>
