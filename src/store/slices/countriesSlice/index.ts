@@ -36,4 +36,5 @@ const countriesSlice = createSlice({
 });
 
 export const countriesReducer = countriesSlice.reducer;
+export const { setLimit } = countriesSlice.actions;
 export { fetchAllCountries };
