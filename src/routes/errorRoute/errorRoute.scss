@@ -1,4 +1,4 @@
-.error {
+.error-route {
     min-height: 100vh;
     padding: 1rem;
 
@@ -9,7 +9,7 @@
         min-height: 100dvh;
     }
 
-    &__container {
+    &__message-wrapper {
         margin: auto;
 
         display: flex;

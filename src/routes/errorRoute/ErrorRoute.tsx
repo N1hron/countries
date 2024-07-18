@@ -4,9 +4,9 @@ import useTheme from '../../hooks/useTheme';
 import StatusMessage from '../../components/statusMessage/StatusMessage';
 import Button from '../../components/button/Button';
 
-import './error.scss';
+import './errorRoute.scss';
 
-function Error() {
+function ErrorRoute() {
     useTheme();
     const error = useRouteError();
 
@@ -16,8 +16,8 @@ function Error() {
     const statusText = isRouteError ? error.statusText : 'Unexpected error';
 
     return (
-        <div className='error'>
-            <div className='error__container'>
+        <div className='error-route'>
+            <div className='error-route__message-wrapper'>
                 <StatusMessage
                     status='error'
                     statusCode={statusCode}
@@ -33,4 +33,4 @@ function Error() {
     );
 }
 
-export default Error;
+export default ErrorRoute;
