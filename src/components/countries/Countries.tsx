@@ -2,11 +2,12 @@ import useCountries from '../../hooks/useCountries';
 import Container from '../container/Container';
 import StatusMessage from '../statusMessage/StatusMessage';
 import CountryCard from './CountryCard';
+import Button from '../button/Button';
 
 import './countries.scss';
 
 function Countries() {
-    const [status, countries, limit] = useCountries();
+    const [status, countries, limit, increaseLimit] = useCountries();
 
     function renderCountries() {
         return countries
@@ -16,15 +17,31 @@ function Countries() {
             ));
     }
 
+    function showMore() {
+        increaseLimit();
+    }
+
     const statusText = status === 'error' ? 'Could not load countries' : '';
+    const canShowMore = limit < countries.length;
 
     return (
         <div className='countries'>
             <Container className='countries__container'>
                 {status === 'success' ? (
-                    <div className='countries__country-cards'>
-                        {renderCountries()}
-                    </div>
+                    <>
+                        <div className='countries__country-cards'>
+                            {renderCountries()}
+                        </div>
+                        {canShowMore && (
+                            <Button
+                                isLink={false}
+                                onClick={showMore}
+                                className='countries__show-more-btn'
+                            >
+                                Show more
+                            </Button>
+                        )}
+                    </>
                 ) : (
                     <StatusMessage
                         status={status}

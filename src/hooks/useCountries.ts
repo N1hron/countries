@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 
 import { useAppDispatch, useAppSelector } from '../store';
-import { fetchAllCountries } from '../store/slices/countriesSlice';
+import { fetchAllCountries, setLimit } from '../store/slices/countriesSlice';
 import {
     selectAllCountries,
     selectCountriesStatus,
@@ -20,7 +20,13 @@ function useCountries() {
         // eslint-disable-next-line
     }, []);
 
-    return [status, countries, limit] as const;
+    function increaseLimit(n: number = 8) {
+        if (limit < countries.length) {
+            dispatch(setLimit(limit + n));
+        }
+    }
+
+    return [status, countries, limit, increaseLimit] as const;
 }
 
 export default useCountries;
