@@ -8,8 +8,8 @@ interface Props {
     className?: string;
 }
 
-function Container({ children, style, className }: Props) {
-    const cn = 'container' + (className ? ` ${className}` : '');
+function Container({ children, style, className = '' }: Props) {
+    const cn = ('container ' + className).trim();
 
     return (
         <div className={cn} style={style}>
