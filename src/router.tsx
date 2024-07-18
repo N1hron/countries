@@ -2,7 +2,7 @@ import { createBrowserRouter } from 'react-router-dom';
 
 import RootRoute from './routes/rootRoute/RootRoute';
 import ErrorRoute from './routes/errorRoute/ErrorRoute';
-import Countries from './components/countries/Countries';
+import CountriesList from './components/countriesList/CountriesList';
 
 const router = createBrowserRouter([
     {
@@ -12,7 +12,7 @@ const router = createBrowserRouter([
         children: [
             {
                 path: '',
-                element: <Countries />,
+                element: <CountriesList />,
             },
         ],
     },
