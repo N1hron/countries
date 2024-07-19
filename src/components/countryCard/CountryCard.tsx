@@ -9,7 +9,7 @@ type Props = {
 
 function CountryCard({ country }: Props) {
     return (
-        <article className='country-card'>
+        <article tabIndex={0} className='country-card'>
             <img
                 className='country-card__flag'
                 src={country.flag}

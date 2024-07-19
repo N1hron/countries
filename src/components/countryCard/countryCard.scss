@@ -8,6 +8,10 @@
     border-radius: var(--border-radius);
     overflow: hidden;
 
+    &:focus-visible {
+        outline: var(--focus-outline);
+    }
+
     &__flag {
         height: $max-card-width * 0.6;
         width: 100%;
