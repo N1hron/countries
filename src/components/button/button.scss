@@ -1,7 +1,7 @@
 .button {
     background-color: var(--elements);
     box-shadow: var(--shadow);
-    border-radius: var(--br);
+    border-radius: var(--border-radius);
     color: var(--text);
     border: none;
 
@@ -14,7 +14,7 @@
         background-color: var(--elements-dark);
     }
 
-    &:active {
-        background-color: var(--elements-darker);
+    &:focus-visible {
+        outline: var(--focus-outline);
     }
 }

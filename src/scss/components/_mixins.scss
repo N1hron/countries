@@ -3,6 +3,8 @@
         --#{$name}: #{$color};
     }
 
+    --focus-outline: 0.1rem solid var(--text);
+
     @if $is-dark {
         --elements-dark: hsl(from var(--elements) h s calc(l - 2));
         --elements-darker: hsl(from var(--elements) h s calc(l - 3));
