@@ -12,6 +12,7 @@
         font-weight: var(--fw-bolder);
         font-size: var(--fs-xl);
         border-radius: var(--border-radius);
+        padding: 0 0.25rem;
 
         &:focus-visible {
             outline-offset: 0.1rem;

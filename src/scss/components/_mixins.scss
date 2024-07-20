@@ -1,15 +1,7 @@
-@mixin set-theme($theme, $is-dark: false) {
+@mixin set-theme($theme) {
     @each $name, $color in $theme {
         --#{$name}: #{$color};
     }
 
     --focus-outline: 0.1rem solid var(--text);
-
-    @if $is-dark {
-        --elements-dark: hsl(from var(--elements) h s calc(l - 2));
-        --elements-darker: hsl(from var(--elements) h s calc(l - 3));
-    } @else {
-        --elements-dark: hsl(from var(--elements) h s calc(l - 4));
-        --elements-darker: hsl(from var(--elements) h s calc(l - 6));
-    }
 }

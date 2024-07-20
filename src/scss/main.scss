@@ -31,7 +31,7 @@ body {
 }
 
 body[data-theme='dark'] {
-    @include mixins.set-theme(themes.$dark, true);
+    @include mixins.set-theme(themes.$dark);
 }
 
 body[data-theme='light'] {
