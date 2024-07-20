@@ -6,4 +6,4 @@ export const selectAllCountries = (state: RootState) =>
 export const selectCountriesStatus = (state: RootState) =>
     state.countries.status;
 
-export const selectLimit = (state: RootState) => state.countries.limit;
+export const selectCountriesLimit = (state: RootState) => state.countries.limit;

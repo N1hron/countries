@@ -3,7 +3,7 @@ import { setLimit } from '../store/slices/countriesSlice';
 import {
     selectAllCountries,
     selectCountriesStatus,
-    selectLimit,
+    selectCountriesLimit,
 } from '../store/slices/countriesSlice/selectors';
 
 function useCountries() {
@@ -11,7 +11,7 @@ function useCountries() {
 
     const countries = useAppSelector(selectAllCountries);
     const status = useAppSelector(selectCountriesStatus);
-    const limit = useAppSelector(selectLimit);
+    const limit = useAppSelector(selectCountriesLimit);
 
     function increaseLimit(n: number = 8) {
         dispatch(setLimit(limit + n));
