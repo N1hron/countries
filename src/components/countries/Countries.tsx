@@ -3,7 +3,7 @@ import { useEffect } from 'react';
 import { useAppDispatch } from '../../store';
 import { fetchAllCountries } from '../../store/slices/countriesSlice';
 import CountriesStatus from './CountriesStatus';
-import CountriesList from './countriesList/CountriesList';
+import CountryList from './countryList/CountryList';
 import ShowMoreCountries from './ShowMoreCountries';
 
 function Countries() {
@@ -17,7 +17,7 @@ function Countries() {
     return (
         <>
             <CountriesStatus />
-            <CountriesList />
+            <CountryList />
             <ShowMoreCountries />
         </>
     );

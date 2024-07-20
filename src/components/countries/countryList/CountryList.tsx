@@ -1,9 +1,9 @@
 import useCountries from '../../../hooks/useCountries';
 import CountryCard from '../countryCard/CountryCard';
 
-import './countriesList.scss';
+import './countryList.scss';
 
-function CountriesList() {
+function CountryList() {
     const { status, countries } = useCountries();
 
     function renderCountries() {
@@ -13,7 +13,7 @@ function CountriesList() {
     }
 
     if (status !== 'success') return null;
-    return <div className='countries-list'>{renderCountries()}</div>;
+    return <div className='country-list'>{renderCountries()}</div>;
 }
 
-export default CountriesList;
+export default CountryList;
