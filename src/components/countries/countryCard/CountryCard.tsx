@@ -1,5 +1,5 @@
-import { Country } from '../../types/countries';
-import formatPopulation from '../../utils/formatPopulation';
+import { Country } from '../../../types/countries';
+import formatPopulation from '../../../utils/formatPopulation';
 
 import './countryCard.scss';
 

@@ -1,5 +1,5 @@
-import useCountries from '../hooks/useCountries';
-import Button from './button/Button';
+import useCountries from '../../hooks/useCountries';
+import Button from '../button/Button';
 
 function ShowMoreCountries() {
     const { status, limit, increaseLimit } = useCountries();

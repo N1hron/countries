@@ -1,4 +1,4 @@
-import useCountries from '../../hooks/useCountries';
+import useCountries from '../../../hooks/useCountries';
 import CountryCard from '../countryCard/CountryCard';
 
 import './countriesList.scss';

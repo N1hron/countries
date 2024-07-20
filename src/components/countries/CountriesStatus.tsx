@@ -1,5 +1,5 @@
-import useCountries from '../hooks/useCountries';
-import StatusMessage from './statusMessage/StatusMessage';
+import useCountries from '../../hooks/useCountries';
+import StatusMessage from '../statusMessage/StatusMessage';
 
 function CountriesStatus() {
     const { status } = useCountries();
