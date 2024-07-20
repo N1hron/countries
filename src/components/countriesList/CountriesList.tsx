@@ -12,11 +12,8 @@ function CountriesList() {
         ));
     }
 
-    return (
-        status === 'success' && (
-            <div className='countries-list'>{renderCountries()}</div>
-        )
-    );
+    if (status !== 'success') return null;
+    return <div className='countries-list'>{renderCountries()}</div>;
 }
 
 export default CountriesList;

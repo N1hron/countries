@@ -8,13 +8,11 @@ function ShowMoreCountries() {
 
     const canShowMore = limit.current < limit.max;
 
+    if (status !== 'success' || !canShowMore) return null;
     return (
-        status === 'success' &&
-        canShowMore && (
-            <Button isLink={false} onClick={handleClick}>
-                Show more
-            </Button>
-        )
+        <Button isLink={false} onClick={handleClick}>
+            Show more
+        </Button>
     );
 }
 

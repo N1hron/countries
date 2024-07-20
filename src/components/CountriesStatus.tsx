@@ -6,14 +6,13 @@ function CountriesStatus() {
 
     const statusText = status === 'error' ? 'Could not load countries' : '';
 
+    if (status === 'success') return null;
     return (
-        status !== 'success' && (
-            <StatusMessage
-                status={status}
-                statusText={statusText}
-                style={{ margin: 'auto' }}
-            />
-        )
+        <StatusMessage
+            status={status}
+            statusText={statusText}
+            style={{ margin: 'auto' }}
+        />
     );
 }
 
