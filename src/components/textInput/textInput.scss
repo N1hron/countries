@@ -1,0 +1,50 @@
+.text-input {
+    background-color: var(--elements);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    padding: 1rem 1.75rem;
+    cursor: text;
+
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+    &:has(input:focus-visible) {
+        outline: var(--focus-outline);
+    }
+
+    &__icon {
+        width: 1.5rem;
+        height: 1.5rem;
+
+        fill: var(--text);
+    }
+
+    &__label {
+        // Visually hidden
+
+        border: 0;
+        padding: 0;
+        margin: 0;
+        position: absolute !important;
+        height: 1px;
+        width: 1px;
+        overflow: hidden;
+        clip: rect(1px 1px 1px 1px);
+        clip: rect(1px, 1px, 1px, 1px);
+        clip-path: inset(50%);
+        white-space: nowrap;
+    }
+
+    input {
+        background: none;
+        color: var(--text);
+        border: none;
+        font-size: var(--fs-sm);
+        flex-grow: 1;
+
+        &:focus-visible {
+            outline: none;
+        }
+    }
+}
