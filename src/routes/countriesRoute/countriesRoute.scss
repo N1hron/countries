@@ -4,7 +4,8 @@
     flex-grow: 1;
 
     &__container {
-        padding: 2.75rem 0;
+        padding-top: 2.75rem;
+        padding-bottom: 2.75rem;
 
         display: flex;
         flex-direction: column;
