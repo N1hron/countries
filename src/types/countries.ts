@@ -4,6 +4,14 @@ type Currency = Record<CurrencyKeys, string>;
 type LanguageKeys = 'iso639_1' | 'iso639_2' | 'name' | 'nativeName';
 type Language = Record<LanguageKeys, string>;
 
+export type Region =
+    | 'All'
+    | 'Africa'
+    | 'America'
+    | 'Asia'
+    | 'Europe'
+    | 'Oceania';
+
 export type Country = {
     name: string;
     nativeName: string;

@@ -1,19 +1,27 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
 import { fetchAllCountries } from './thunks';
-import { Country } from '../../../types/countries';
+import { Country, Region } from '../../../types/countries';
 import { Status } from '../../../types/status';
 
 type State = {
     entities: Country[];
     status: Status;
     limit: number;
+    filter: {
+        search: string;
+        region: Region;
+    };
 };
 
 const initialState: State = {
     entities: [],
     status: 'idle',
     limit: 0,
+    filter: {
+        search: '',
+        region: 'All',
+    },
 };
 
 const countriesSlice = createSlice({
@@ -31,6 +39,9 @@ const countriesSlice = createSlice({
             } else {
                 state.limit = newLimit;
             }
+        },
+        setFilter(state, action: PayloadAction<State['filter']>) {
+            state.filter = action.payload;
         },
     },
     extraReducers: (builder) => {
@@ -50,5 +61,5 @@ const countriesSlice = createSlice({
 });
 
 export const countriesReducer = countriesSlice.reducer;
-export const { setLimit } = countriesSlice.actions;
+export const { setLimit, setFilter } = countriesSlice.actions;
 export { fetchAllCountries };
