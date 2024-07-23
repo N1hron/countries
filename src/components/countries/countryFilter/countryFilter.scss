@@ -1,0 +1,12 @@
+.country-filter {
+    width: 100%;
+
+    display: flex;
+    justify-content: space-between;
+    gap: 2.75rem;
+
+    &__search {
+        max-width: 30rem;
+        flex-grow: 1;
+    }
+}
