@@ -1,9 +1,11 @@
-import useCountries from '../../hooks/useCountries';
+import { Status } from '../../types/status';
 import StatusMessage from '../statusMessage/StatusMessage';
 
-function CountriesStatus() {
-    const { status } = useCountries();
+type Props = {
+    status: Status;
+};
 
+function CountriesStatus({ status }: Props) {
     const statusText = status === 'error' ? 'Could not load countries' : '';
 
     if (status === 'success') return null;

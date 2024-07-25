@@ -1,11 +1,15 @@
-import useCountries from '../../../hooks/useCountries';
+import { Country } from '../../../types/countries';
+import { Status } from '../../../types/status';
 import CountryCard from '../countryCard/CountryCard';
 
 import './countryList.scss';
 
-function CountryList() {
-    const { status, countries } = useCountries();
+type Props = {
+    status: Status;
+    countries: Country[];
+};
 
+function CountryList({ status, countries }: Props) {
     function renderCountries() {
         return countries.map((country) => (
             <CountryCard key={country.nativeName} country={country} />

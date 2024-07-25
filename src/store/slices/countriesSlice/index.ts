@@ -14,13 +14,15 @@ type State = {
     };
 };
 
+export const defaultRegion: Region = 'All';
+
 const initialState: State = {
     entities: [],
     status: 'idle',
     limit: 0,
     filter: {
         search: '',
-        region: 'All',
+        region: defaultRegion,
     },
 };
 
@@ -29,16 +31,7 @@ const countriesSlice = createSlice({
     initialState,
     reducers: {
         setLimit(state, action: PayloadAction<number>) {
-            const newLimit = action.payload;
-            const maxLimit = state.entities.length;
-
-            if (newLimit > maxLimit) {
-                state.limit = maxLimit;
-            } else if (newLimit < 1) {
-                state.limit = 1;
-            } else {
-                state.limit = newLimit;
-            }
+            state.limit = action.payload;
         },
         setFilter(state, action: PayloadAction<State['filter']>) {
             state.filter = action.payload;

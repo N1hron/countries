@@ -1,6 +1,4 @@
-import { ChangeEventHandler } from 'react';
-
-import useCountriesFilter from '../../../hooks/useCountriesFilter';
+import { defaultRegion } from '../../../store/slices/countriesSlice';
 import { Region } from '../../../types/countries';
 import TextInput from '../../textInput/TextInput';
 import SearchIcon from '../../../assets/icons/search.svg?react';
@@ -11,25 +9,18 @@ import './countryFilter.scss';
 const selectOptions: Region[] = [
     'All',
     'Africa',
-    'America',
+    'Americas',
     'Asia',
     'Europe',
     'Oceania',
 ];
 
-function CountryFilter() {
-    const { setRegion, setSearch } = useCountriesFilter();
+type Props = {
+    setRegion: (value: Region) => void;
+    setSearch: (value: string) => void;
+};
 
-    const handleSearchChange: ChangeEventHandler<HTMLInputElement> = (
-        event
-    ) => {
-        setSearch(event.target.value);
-    };
-
-    const handleRegionChange = (value: Region) => {
-        setRegion(value);
-    };
-
+function CountryFilter({ setRegion, setSearch }: Props) {
     return (
         <form className='country-filter'>
             <TextInput
@@ -37,12 +28,13 @@ function CountryFilter() {
                 label='Enter country name'
                 placeholder='Search for a country...'
                 className='country-filter__search'
-                onChange={handleSearchChange}
+                onChange={(event) => setSearch(event.target.value)}
             />
             <Select
                 label='Filter by Region'
                 options={selectOptions}
-                onChange={handleRegionChange}
+                defaultOption={defaultRegion}
+                onChange={(region) => setRegion(region)}
             />
         </form>
     );

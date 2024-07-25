@@ -7,7 +7,7 @@ type Language = Record<LanguageKeys, string>;
 export type Region =
     | 'All'
     | 'Africa'
-    | 'America'
+    | 'Americas'
     | 'Asia'
     | 'Europe'
     | 'Oceania';

@@ -1,8 +1,11 @@
 import { useEffect } from 'react';
 
 import { useAppDispatch, useAppSelector } from '../store';
-import { setLimit } from '../store/slices/countriesSlice';
-import { fetchAllCountries } from '../store/slices/countriesSlice';
+import {
+    setLimit,
+    setFilter,
+    fetchAllCountries,
+} from '../store/slices/countriesSlice';
 import {
     selectAllCountries,
     selectCountriesStatus,
@@ -46,11 +49,21 @@ function useCountries() {
         dispatch(setLimit(newLimit));
     }
 
+    function setSearch(value: typeof filter.search) {
+        dispatch(setFilter({ ...filter, search: value }));
+    }
+
+    function setRegion(value: typeof filter.region) {
+        dispatch(setFilter({ ...filter, region: value }));
+    }
+
     return {
         countries: filteredCountries.slice(0, limit),
         status,
         limit: { current: limit, max: maxLimit },
         increaseLimit,
+        setSearch,
+        setRegion,
     };
 }
 
