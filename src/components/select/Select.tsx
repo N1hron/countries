@@ -6,6 +6,7 @@ import './select.scss';
 
 type Props<T extends string> = {
     options: T[];
+    defaultOption?: T;
     label: string;
     className?: string;
     onChange?: (selectedOptionValue: T) => void;
@@ -15,10 +16,13 @@ function Select<T extends string>({
     options,
     label,
     className = '',
+    defaultOption,
     onChange,
 }: Props<T>) {
     const [expanded, setExpanded] = useState(false);
-    const [selectedOption, setSelectedOption] = useState<number>();
+    const [selectedOption, setSelectedOption] = useState<number>(() =>
+        defaultOption ? options.indexOf(defaultOption) : 1
+    );
     const [focusedOption, setFocusedOption] = useState(0);
 
     const inputRef = useRef<HTMLDivElement>(null);
