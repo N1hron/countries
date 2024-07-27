@@ -1,5 +1,4 @@
 import { Country } from '../../../types/countries';
-import formatPopulation from '../../../utils/formatPopulation';
 
 import './countryCard.scss';
 
@@ -20,7 +19,7 @@ function CountryCard({ country }: Props) {
                 <ul className='country-card__info-items'>
                     <li className='country-card__info-item'>
                         Population:{' '}
-                        <span>{formatPopulation(country.population)}</span>
+                        <span>{country.population.toLocaleString('en')}</span>
                     </li>
                     <li className='country-card__info-item'>
                         Region: <span>{country.region}</span>
