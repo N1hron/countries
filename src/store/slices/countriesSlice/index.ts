@@ -1,11 +1,11 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
 import { fetchAllCountries } from './thunks';
-import { Country, Region } from '../../../types/countries';
+import { CountryInfo, Region } from '../../../types/countries';
 import { Status } from '../../../types/status';
 
 type State = {
-    entities: Country[];
+    entities: CountryInfo[];
     status: Status;
     limit: number;
     filter: {

@@ -12,16 +12,19 @@ export type Region =
     | 'Europe'
     | 'Oceania';
 
-export type Country = {
+export type CountryInfo = {
     name: string;
     nativeName: string;
     population: number;
     region: string;
-    subregion: string;
     capital: string;
+    flag: string;
+};
+
+export type CountryInfoDetailed = CountryInfo & {
+    subregion: string;
     topLevelDomain: string[];
     currencies: Currency[];
     languages: Language[];
     borders: string[];
-    flag: string;
 };

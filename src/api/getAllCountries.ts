@@ -1,18 +1,20 @@
-import { Country } from '../types/countries';
-import { getAllUrl } from './config';
+import { ApiURL } from './apiUrl';
+import getJson from '../utils/http/getJson';
+import { CountryInfo } from '../types/countries';
+
+const fields = [
+    'name',
+    'nativeName',
+    'population',
+    'region',
+    'capital',
+    'flag',
+];
 
 async function getAllCountries() {
-    const response = await fetch(getAllUrl);
+    const url = new ApiURL(`all`, fields);
 
-    if (response.ok) {
-        const json = (await response.json()) as Country[];
-
-        return json;
-    } else {
-        throw new Error(
-            `Could not fetch all countries, status: ${response.status}, message: ${response.statusText}`
-        );
-    }
+    return getJson<CountryInfo[]>(url);
 }
 
 export { getAllCountries };

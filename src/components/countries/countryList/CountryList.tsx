@@ -1,4 +1,4 @@
-import { Country } from '../../../types/countries';
+import { CountryInfo } from '../../../types/countries';
 import { Status } from '../../../types/status';
 import CountryCard from '../countryCard/CountryCard';
 
@@ -6,7 +6,7 @@ import './countryList.scss';
 
 type Props = {
     status: Status;
-    countries: Country[];
+    countries: CountryInfo[];
 };
 
 function CountryList({ status, countries }: Props) {

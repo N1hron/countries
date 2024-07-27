@@ -1,9 +1,9 @@
-import { Country } from '../../../types/countries';
+import { CountryInfo } from '../../../types/countries';
 
 import './countryCard.scss';
 
 type Props = {
-    country: Country;
+    country: CountryInfo;
 };
 
 function CountryCard({ country }: Props) {
