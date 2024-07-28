@@ -1,16 +1,18 @@
-import { Status } from '../../types/status';
+import { useAppDispatch, useAppSelector } from '../../store';
+import { setCurrentLimit } from '../../store/slices/countriesSlice';
+import { selectCountriesLimit } from '../../store/slices/countriesSlice/selectors';
 import Button from '../buttons/button/Button';
 
-type Props = {
-    status: Status;
-    limit: { current: number; max: number };
-    increaseLimit: () => void;
-};
-
-function ShowMoreButton({ status, limit, increaseLimit }: Props) {
+function ShowMoreButton() {
+    const dispatch = useAppDispatch();
+    const limit = useAppSelector(selectCountriesLimit);
     const canShowMore = limit.current < limit.max;
 
-    if (status !== 'success' || !canShowMore) return null;
+    function increaseLimit() {
+        dispatch(setCurrentLimit(limit.current + 8));
+    }
+
+    if (!canShowMore) return null;
     return (
         <Button
             isLink={false}

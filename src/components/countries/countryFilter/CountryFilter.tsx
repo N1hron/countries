@@ -1,3 +1,6 @@
+import { useAppDispatch, useAppSelector } from '../../../store';
+import { selectCountriesFilter } from '../../../store/slices/countriesSlice/selectors';
+import { setFilter } from '../../../store/slices/countriesSlice';
 import { defaultRegion } from '../../../store/slices/countriesSlice';
 import { Region } from '../../../types/countries';
 import TextInput from '../../textInput/TextInput';
@@ -15,12 +18,18 @@ const selectOptions: Region[] = [
     'Oceania',
 ];
 
-type Props = {
-    setRegion: (value: Region) => void;
-    setSearch: (value: string) => void;
-};
+function CountryFilter() {
+    const dispatch = useAppDispatch();
+    const filter = useAppSelector(selectCountriesFilter);
 
-function CountryFilter({ setRegion, setSearch }: Props) {
+    function setSearch(value: typeof filter.search) {
+        dispatch(setFilter({ ...filter, search: value }));
+    }
+
+    function setRegion(value: typeof filter.region) {
+        dispatch(setFilter({ ...filter, region: value }));
+    }
+
     return (
         <form className='country-filter'>
             <TextInput

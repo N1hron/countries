@@ -1,23 +1,31 @@
-import useCountries from '../../hooks/useCountries';
+import { useEffect } from 'react';
+import { useAppDispatch, useAppSelector } from '../../store';
+import { selectCountriesStatus } from '../../store/slices/countriesSlice/selectors';
+import { fetchAllCountries } from '../../store/slices/countriesSlice/thunks';
 import CountryFilter from './countryFilter/CountryFilter';
 import CountryList from './countryList/CountryList';
 import ShowMoreButton from './ShowMoreButton';
 import CountriesStatus from './CountriesStatus';
 
 function Countries() {
-    const { countries, status, limit, increaseLimit, setRegion, setSearch } =
-        useCountries();
+    const dispatch = useAppDispatch();
+    const status = useAppSelector(selectCountriesStatus);
+
+    useEffect(() => {
+        dispatch(fetchAllCountries());
+    }, []);
 
     return (
         <>
-            <CountryFilter setRegion={setRegion} setSearch={setSearch} />
-            <CountryList countries={countries} status={status} />
-            <ShowMoreButton
-                status={status}
-                limit={limit}
-                increaseLimit={increaseLimit}
-            />
-            <CountriesStatus status={status} />
+            {status === 'success' ? (
+                <>
+                    <CountryFilter />
+                    <CountryList />
+                    <ShowMoreButton />
+                </>
+            ) : (
+                <CountriesStatus status={status} />
+            )}
         </>
     );
 }

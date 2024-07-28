@@ -1,16 +1,14 @@
-import { CountryInfo } from '../../../types/countries';
-import { Status } from '../../../types/status';
-import CountryCard from '../countryCard/CountryCard';
 import { Link } from 'react-router-dom';
+
+import { useAppSelector } from '../../../store';
+import { selectCountries } from '../../../store/slices/countriesSlice/selectors';
+import CountryCard from '../countryCard/CountryCard';
 
 import './countryList.scss';
 
-type Props = {
-    status: Status;
-    countries: CountryInfo[];
-};
+function CountryList() {
+    const countries = useAppSelector(selectCountries);
 
-function CountryList({ status, countries }: Props) {
     function renderCountries() {
         return countries.map((country) => (
             <li key={country.nativeName}>
@@ -21,7 +19,6 @@ function CountryList({ status, countries }: Props) {
         ));
     }
 
-    if (status !== 'success') return null;
     return <ul className='country-list'>{renderCountries()}</ul>;
 }
 
