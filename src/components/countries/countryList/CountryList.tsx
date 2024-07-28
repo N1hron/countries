@@ -1,6 +1,7 @@
 import { CountryInfo } from '../../../types/countries';
 import { Status } from '../../../types/status';
 import CountryCard from '../countryCard/CountryCard';
+import { Link } from 'react-router-dom';
 
 import './countryList.scss';
 
@@ -12,12 +13,16 @@ type Props = {
 function CountryList({ status, countries }: Props) {
     function renderCountries() {
         return countries.map((country) => (
-            <CountryCard key={country.nativeName} country={country} />
+            <li key={country.nativeName}>
+                <Link to={country.name}>
+                    <CountryCard country={country} />
+                </Link>
+            </li>
         ));
     }
 
     if (status !== 'success') return null;
-    return <div className='country-list'>{renderCountries()}</div>;
+    return <ul className='country-list'>{renderCountries()}</ul>;
 }
 
 export default CountryList;

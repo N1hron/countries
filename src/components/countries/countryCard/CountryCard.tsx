@@ -8,7 +8,7 @@ type Props = {
 
 function CountryCard({ country }: Props) {
     return (
-        <article tabIndex={0} className='country-card'>
+        <article className='country-card'>
             <img
                 className='country-card__flag'
                 src={country.flag}

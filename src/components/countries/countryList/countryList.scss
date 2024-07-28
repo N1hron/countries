@@ -1,8 +1,27 @@
 .country-list {
     width: 100%;
+    list-style: none;
 
     display: grid;
     grid-template-columns: repeat(auto-fit, 15rem);
     justify-content: center;
     gap: 4rem;
+
+    a {
+        &:focus-visible {
+            outline: none;
+
+            .country-card {
+                outline: var(--focus-outline);
+                scale: 1.05;
+            }
+        }
+
+        &:hover {
+            .country-card {
+                background-color: var(--elements-dark);
+                scale: 1.05;
+            }
+        }
+    }
 }
