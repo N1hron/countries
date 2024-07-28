@@ -1,0 +1,16 @@
+.main {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+
+    &__container {
+        padding-top: 2.75rem;
+        padding-bottom: 2.75rem;
+
+        display: flex;
+        flex-direction: column;
+        gap: 2.75rem;
+
+        flex-grow: 1;
+    }
+}
