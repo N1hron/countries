@@ -1,7 +1,7 @@
 import useCountries from '../../hooks/useCountries';
 import CountryFilter from './countryFilter/CountryFilter';
 import CountryList from './countryList/CountryList';
-import ShowMoreCountries from './ShowMoreCountries';
+import ShowMoreButton from './ShowMoreButton';
 import CountriesStatus from './CountriesStatus';
 
 function Countries() {
@@ -12,7 +12,7 @@ function Countries() {
         <>
             <CountryFilter setRegion={setRegion} setSearch={setSearch} />
             <CountryList countries={countries} status={status} />
-            <ShowMoreCountries
+            <ShowMoreButton
                 status={status}
                 limit={limit}
                 increaseLimit={increaseLimit}
