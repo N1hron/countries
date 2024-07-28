@@ -1,11 +1,8 @@
 import { useEffect } from 'react';
 
 import { useAppDispatch, useAppSelector } from '../store';
-import {
-    setLimit,
-    setFilter,
-    fetchAllCountries,
-} from '../store/slices/countriesSlice';
+import { setLimit, setFilter } from '../store/slices/countriesSlice';
+import { fetchAllCountries } from '../store/slices/countriesSlice/thunks';
 import {
     selectAllCountries,
     selectCountriesStatus,
