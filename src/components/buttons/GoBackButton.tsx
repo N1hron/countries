@@ -1,9 +1,16 @@
+import { LinkProps } from 'react-router-dom';
+
 import Button from './button/Button';
 import ArrowBackIcon from '../../assets/icons/arrow-back.svg?react';
 
-function GoBackButton() {
+function GoBackButton(props: Omit<LinkProps, 'to'>) {
     return (
-        <Button isLink to='../'>
+        <Button
+            {...props}
+            style={{ ...props.style, paddingLeft: '1.84rem' }}
+            isLink
+            to='../'
+        >
             <ArrowBackIcon />
             Back
         </Button>
