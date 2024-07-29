@@ -5,7 +5,7 @@ import { fetchAllCountries } from '../../store/slices/countriesSlice/thunks';
 import CountryFilter from './countryFilter/CountryFilter';
 import CountryList from './countryList/CountryList';
 import ShowMoreButton from './ShowMoreButton';
-import CountriesStatus from './CountriesStatus';
+import StatusMessage from '../statusMessage/StatusMessage';
 
 function Countries() {
     const dispatch = useAppDispatch();
@@ -14,6 +14,8 @@ function Countries() {
     useEffect(() => {
         dispatch(fetchAllCountries());
     }, []);
+
+    const statusText = status === 'error' ? 'Could not load countries' : '';
 
     return (
         <>
@@ -24,7 +26,11 @@ function Countries() {
                     <ShowMoreButton />
                 </>
             ) : (
-                <CountriesStatus status={status} />
+                <StatusMessage
+                    status={status}
+                    statusText={statusText}
+                    style={{ margin: 'auto' }}
+                />
             )}
         </>
     );
