@@ -16,10 +16,10 @@ const fields = [
     'flag',
 ];
 
-async function getCountryDetails(countryName: string) {
+async function getCountryDetailsByName(countryName: string) {
     const url = new ApiURL(`name/${countryName}`, fields);
 
     return getJson<CountryInfoDetailed[]>(url);
 }
 
-export { getCountryDetails };
+export { getCountryDetailsByName };

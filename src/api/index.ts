@@ -1,7 +1,9 @@
 import { getAllCountries } from './getAllCountries';
-import { getCountryDetails } from './getCountryDetails';
+import { getCountryDetailsByName } from './getCountryDetailsByName';
+import { getCountryNameByCode } from './getCountryNameByCode';
 
 export const api = {
     getAllCountries,
-    getCountryDetails,
+    getCountryDetailsByName,
+    getCountryNameByCode,
 };
