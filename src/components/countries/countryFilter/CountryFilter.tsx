@@ -1,7 +1,6 @@
 import { useAppDispatch, useAppSelector } from '../../../store';
 import { selectCountriesFilter } from '../../../store/slices/countriesSlice/selectors';
 import { setFilter } from '../../../store/slices/countriesSlice';
-import { defaultRegion } from '../../../store/slices/countriesSlice';
 import { Region } from '../../../types/countries';
 import TextInput from '../../textInput/TextInput';
 import SearchIcon from '../../../assets/icons/search.svg?react';
@@ -22,12 +21,16 @@ function CountryFilter() {
     const dispatch = useAppDispatch();
     const filter = useAppSelector(selectCountriesFilter);
 
-    function setSearch(value: typeof filter.search) {
-        dispatch(setFilter({ ...filter, search: value }));
+    function setSearch(newSearch: string) {
+        if (filter.search !== newSearch) {
+            dispatch(setFilter({ ...filter, search: newSearch }));
+        }
     }
 
-    function setRegion(value: typeof filter.region) {
-        dispatch(setFilter({ ...filter, region: value }));
+    function setRegion(newRegion: typeof filter.region) {
+        if (filter.region !== newRegion) {
+            dispatch(setFilter({ ...filter, region: newRegion }));
+        }
     }
 
     return (
@@ -37,12 +40,13 @@ function CountryFilter() {
                 label='Enter country name'
                 placeholder='Search for a country...'
                 className='country-filter__search'
+                value={filter.search}
                 onChange={(event) => setSearch(event.target.value)}
             />
             <Select
                 label='Filter by Region'
                 options={selectOptions}
-                defaultOption={defaultRegion}
+                defaultOption={filter.region}
                 onChange={(region) => setRegion(region)}
             />
         </form>
