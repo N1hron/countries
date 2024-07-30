@@ -1,17 +1,15 @@
-import { ReactNode } from 'react';
+import { Outlet } from 'react-router-dom';
 
 import Container from '../container/Container';
 
 import './main.scss';
 
-type Props = {
-    children?: ReactNode;
-};
-
-function Main({ children }: Props) {
+function Main() {
     return (
         <main className='main'>
-            <Container className='main__container'>{children}</Container>
+            <Container className='main__container'>
+                <Outlet />
+            </Container>
         </main>
     );
 }
