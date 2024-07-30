@@ -3,10 +3,15 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import { themeReducer } from './slices/themeSlice';
 import { countriesReducer } from './slices/countriesSlice';
+import { countryReducer } from './slices/countrySlice';
 import { api } from '../api';
 
 const store = configureStore({
-    reducer: { theme: themeReducer, countries: countriesReducer },
+    reducer: {
+        theme: themeReducer,
+        countries: countriesReducer,
+        country: countryReducer,
+    },
     devTools: import.meta.env.DEV,
     middleware: (getDefaultMiddleware) =>
         getDefaultMiddleware({ thunk: { extraArgument: { api } } }),
