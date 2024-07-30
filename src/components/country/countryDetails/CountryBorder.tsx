@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import Button from '../../buttons/button/Button';
 import { Status } from '../../../types/status';
 import { getCountryNameByCode } from '../../../api/getCountryNameByCode';
-import StatusIcon from '../../statusIcon/StatusIcon';
+import StatusIcon from '../../status/statusIcon/StatusIcon';
 
 type Props = {
     countryCode: string;

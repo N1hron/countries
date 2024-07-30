@@ -1,5 +1,5 @@
 import { Status } from '../../types/status';
-import StatusMessage from '../statusMessage/StatusMessage';
+import StatusMessage from '../status/statusMessage/StatusMessage';
 
 type Props = {
     status: Status;

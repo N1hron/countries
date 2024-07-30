@@ -1,10 +1,10 @@
 import { SVGProps } from 'react';
 
-import LoadingIcon from '../../assets/icons/reload.svg?react';
-import IdleIcon from '../../assets/icons/info.svg?react';
-import SuccessIcon from '../../assets/icons/checkmark.svg?react';
-import ErrorIcon from '../../assets/icons/cross.svg?react';
-import { Status } from '../../types/status';
+import LoadingIcon from '../../../assets/icons/reload.svg?react';
+import IdleIcon from '../../../assets/icons/info.svg?react';
+import SuccessIcon from '../../../assets/icons/checkmark.svg?react';
+import ErrorIcon from '../../../assets/icons/cross.svg?react';
+import { Status } from '../../../types/status';
 
 import './statusIcon.scss';
 

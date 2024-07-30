@@ -5,7 +5,7 @@ import { fetchAllCountries } from '../../store/slices/countriesSlice/thunks';
 import CountryFilter from './countryFilter/CountryFilter';
 import CountryList from './countryList/CountryList';
 import ShowMoreButton from './ShowMoreButton';
-import StatusMessage from '../statusMessage/StatusMessage';
+import StatusMessage from '../status/statusMessage/StatusMessage';
 
 function Countries() {
     const dispatch = useAppDispatch();

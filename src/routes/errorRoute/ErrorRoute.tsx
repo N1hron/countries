@@ -1,7 +1,7 @@
 import { useRouteError, isRouteErrorResponse } from 'react-router-dom';
 
 import useTheme from '../../hooks/useTheme';
-import StatusMessage from '../../components/statusMessage/StatusMessage';
+import StatusMessage from '../../components/status/statusMessage/StatusMessage';
 import Button from '../../components/buttons/button/Button';
 
 import './errorRoute.scss';

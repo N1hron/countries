@@ -1,6 +1,6 @@
 import { CSSProperties } from 'react';
 
-import { Status } from '../../types/status';
+import { Status } from '../../../types/status';
 import StatusIcon from '../statusIcon/StatusIcon';
 
 import './statusMessage.scss';
