@@ -16,8 +16,10 @@
         background-color: var(--elements);
         border-radius: var(--border-radius);
         box-shadow: var(--shadow);
+        height: 100%;
 
-        display: block;
+        display: flex;
+        align-items: center;
         position: relative;
         padding: 0.9rem 3rem 0.9rem 1.5rem;
 
