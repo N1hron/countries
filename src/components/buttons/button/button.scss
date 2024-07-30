@@ -19,6 +19,27 @@
         height: var(--fs-xl);
     }
 
+    &:disabled {
+        cursor: default;
+
+        &:hover {
+            background-color: var(--elements);
+        }
+
+        &:active {
+            background-color: var(--elements);
+        }
+
+        &:focus-visible {
+            outline: none;
+        }
+    }
+
+    &_mini {
+        padding: 0.2rem 1.25rem;
+        font-size: var(--fs-sm);
+    }
+
     &:hover {
         background-color: var(--elements-dark);
     }

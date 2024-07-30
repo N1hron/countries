@@ -5,6 +5,7 @@ import './button.scss';
 
 type CommonProps<T extends boolean> = {
     isLink: T;
+    mini?: boolean;
 };
 
 type Props<T extends boolean> = T extends true
@@ -14,9 +15,10 @@ type Props<T extends boolean> = T extends true
 function Button<T extends boolean>({
     isLink,
     className = '',
+    mini = false,
     ...restProps
 }: Props<T>) {
-    const cn = ('button ' + className).trim();
+    const cn = (`button ${mini ? 'button_mini' : ''}` + className).trim();
 
     if (isLink) {
         const rest = restProps as Omit<Props<true>, 'isLink' | 'className'>;
