@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef, useId } from 'react';
 import { KeyboardEventHandler } from 'react';
-import ChevronIcon from '../../assets/icons/chevron-down.svg?react';
+import ChevronIcon from '../../../assets/icons/chevron-down.svg?react';
 
 import './select.scss';
 

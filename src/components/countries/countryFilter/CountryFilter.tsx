@@ -2,9 +2,9 @@ import { useAppDispatch, useAppSelector } from '../../../store';
 import { selectCountriesFilter } from '../../../store/slices/countriesSlice/selectors';
 import { setFilter } from '../../../store/slices/countriesSlice';
 import { Region } from '../../../types/countries';
-import TextInput from '../../textInput/TextInput';
+import TextInput from '../../controls/textInput/TextInput';
 import SearchIcon from '../../../assets/icons/search.svg?react';
-import Select from '../../select/Select';
+import Select from '../../controls/select/Select';
 
 import './countryFilter.scss';
 

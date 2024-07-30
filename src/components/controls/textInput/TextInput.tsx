@@ -1,6 +1,6 @@
 import { useRef, InputHTMLAttributes } from 'react';
 
-import { Icon } from '../../types/icon';
+import { Icon } from '../../../types/icon';
 
 import './textInput.scss';
 
