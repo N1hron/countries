@@ -1,4 +1,4 @@
-import { Outlet } from 'react-router-dom';
+import { Outlet, ScrollRestoration } from 'react-router-dom';
 
 import Header from '../../components/header/Header';
 import Main from '../../components/main/Main';
@@ -12,6 +12,7 @@ function RootRoute() {
             <Main>
                 <Outlet />
             </Main>
+            <ScrollRestoration getKey={(location) => location.pathname} />
         </div>
     );
 }
