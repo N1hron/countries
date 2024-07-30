@@ -11,7 +11,7 @@ function CountryList() {
 
     function renderCountries() {
         return countries.map((country) => (
-            <li key={country.nativeName}>
+            <li key={country.name}>
                 <Link to={country.name}>
                     <CountryCard country={country} />
                 </Link>

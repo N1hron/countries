@@ -14,17 +14,17 @@ export type Region =
 
 export type CountryInfo = {
     name: string;
-    nativeName: string;
-    population: number;
-    region: string;
-    capital: string;
-    flag: string;
+    nativeName?: string;
+    population?: number;
+    region?: string;
+    capital?: string;
+    flag?: string;
 };
 
 export type CountryInfoDetailed = CountryInfo & {
-    subregion: string;
-    topLevelDomain: string[];
-    currencies: Currency[];
-    languages: Language[];
-    borders: string[];
+    subregion?: string;
+    topLevelDomain?: string[];
+    currencies?: Currency[];
+    languages?: Language[];
+    borders?: string[];
 };
