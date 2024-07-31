@@ -1,32 +1,53 @@
-import { ButtonHTMLAttributes, ForwardedRef, forwardRef } from 'react';
+import { ButtonHTMLAttributes, Ref, forwardRef } from 'react';
 import { Link, LinkProps } from 'react-router-dom';
 
 import './button.scss';
 
-type CommonProps<T extends boolean> = {
-    isLink: T;
+type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
+    isLink?: false;
     mini?: boolean;
 };
 
-type Props<T extends boolean> = T extends true
-    ? CommonProps<T> & LinkProps
-    : CommonProps<T> & ButtonHTMLAttributes<HTMLButtonElement>;
+type LinkButtonProps = LinkProps & {
+    isLink: true;
+    mini?: boolean;
+};
 
-function Button<T extends boolean>(
-    { isLink, className = '', mini = false, ...restProps }: Props<T>,
-    ref: ForwardedRef<HTMLButtonElement>
-) {
-    const cn = (`button ${mini ? 'button_mini' : ''}` + className).trim();
+type Props = ButtonProps | LinkButtonProps;
 
-    if (isLink) {
-        const rest = restProps as Omit<Props<true>, 'isLink' | 'className'>;
+function Button(props: ButtonProps, ref: Ref<HTMLButtonElement>): JSX.Element;
+function Button(
+    props: LinkButtonProps,
+    ref: Ref<HTMLAnchorElement>
+): JSX.Element;
 
-        return <Link {...rest} draggable={false} className={cn} />;
+function Button(props: Props, ref: Ref<HTMLButtonElement | HTMLAnchorElement>) {
+    const cn = (
+        'button ' +
+        (props.mini ? 'button_mini ' : '') +
+        (props.className ? props.className : '')
+    ).trim();
+
+    if (props.isLink) {
+        const { isLink, mini, ...linkProps } = props as LinkButtonProps;
+
+        return (
+            <Link
+                {...linkProps}
+                ref={ref as Ref<HTMLAnchorElement>}
+                className={cn}
+            />
+        );
     } else {
-        const rest = restProps as Omit<Props<false>, 'isLink' | 'className'>;
-
-        return <button {...rest} ref={ref} draggable={false} className={cn} />;
+        const { isLink, mini, ...buttonProps } = props as ButtonProps;
+        return (
+            <button
+                {...buttonProps}
+                ref={ref as Ref<HTMLButtonElement>}
+                className={cn}
+            />
+        );
     }
 }
 
-export default forwardRef(Button);
+export default forwardRef(Button) as unknown as typeof Button;

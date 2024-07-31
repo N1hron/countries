@@ -31,7 +31,7 @@ function CountryBorder({ countryCode }: Props) {
     }
 
     return (
-        <Button disabled isLink={false} mini>
+        <Button disabled mini>
             <StatusIcon status={status} />
         </Button>
     );
