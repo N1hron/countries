@@ -163,7 +163,7 @@ function Select<T extends string>({
     return (
         <div className={`select ${className}`.trim()}>
             <div
-                className='element select__input'
+                className='select__input'
                 role='combobox'
                 aria-haspopup='listbox'
                 aria-controls={menuId}
@@ -181,11 +181,7 @@ function Select<T extends string>({
                 <ChevronIcon />
             </div>
             {expanded && (
-                <div
-                    id={menuId}
-                    role='listbox'
-                    className='element select__menu'
-                >
+                <div id={menuId} role='listbox' className='select__menu'>
                     {renderOptions()}
                 </div>
             )}
