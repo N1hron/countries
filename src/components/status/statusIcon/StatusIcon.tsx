@@ -39,4 +39,4 @@ function StatusIcon({ status, className = '', ...rest }: Props) {
     return <InitialIcon {...rest} className={cn} title={titles[status]} />;
 }
 
-export default StatusIcon;
+export { StatusIcon };

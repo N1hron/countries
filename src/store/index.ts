@@ -17,7 +17,7 @@ const store = configureStore({
         getDefaultMiddleware({ thunk: { extraArgument: { api } } }),
 });
 
-export default store;
+export { store };
 
 export type AppStore = typeof store;
 export type RootState = ReturnType<AppStore['getState']>;

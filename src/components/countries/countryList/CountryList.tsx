@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 
 import { useAppSelector } from '../../../store';
 import { selectCountries } from '../../../store/slices/countriesSlice/selectors';
-import CountryCard from '../countryCard/CountryCard';
+import { CountryCard } from '../countryCard/CountryCard';
 
 import './countryList.scss';
 
@@ -22,4 +22,4 @@ function CountryList() {
     return <ul className='country-list'>{renderCountries()}</ul>;
 }
 
-export default CountryList;
+export { CountryList };

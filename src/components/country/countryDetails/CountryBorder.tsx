@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react';
-import Button from '../../buttons/button/Button';
+import { Button } from '../../buttons/button/Button';
 import { Status } from '../../../types/status';
 import { getCountryNameByCode } from '../../../api/getCountryNameByCode';
-import StatusIcon from '../../status/statusIcon/StatusIcon';
+import { StatusIcon } from '../../status/statusIcon/StatusIcon';
 
 type Props = {
     countryCode: string;
@@ -20,6 +20,8 @@ function CountryBorder({ countryCode }: Props) {
                 setStatus('success');
             })
             .catch(() => setStatus('error'));
+
+        // eslint-disable-next-line
     }, []);
 
     if (status === 'success' && countryName) {
@@ -37,4 +39,4 @@ function CountryBorder({ countryCode }: Props) {
     );
 }
 
-export default CountryBorder;
+export { CountryBorder };

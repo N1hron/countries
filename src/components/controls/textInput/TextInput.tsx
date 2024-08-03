@@ -28,4 +28,4 @@ function TextInput({ Icon, className = '', label, ...rest }: Props) {
     );
 }
 
-export default TextInput;
+export { TextInput };

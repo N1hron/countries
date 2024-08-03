@@ -44,7 +44,7 @@ const countriesSlice = createSlice({
     reducers: {
         setCurrentLimit(state, action: PayloadAction<number>) {
             let newCurrentLimit = action.payload;
-            let maxLimit = state.limit.max;
+            const maxLimit = state.limit.max;
 
             if (newCurrentLimit > maxLimit) {
                 newCurrentLimit = maxLimit;
@@ -72,15 +72,12 @@ const countriesSlice = createSlice({
     extraReducers: (builder) => {
         builder
             .addCase(fetchAllCountries.pending, (state) => {
-                if (state.entities.all.length) {
-                    state.entities.all = [];
-                    state.limit.current = state.limit.max = 0;
-                    state.filter = {
-                        search: '',
-                        region: defaultRegion,
-                    };
-                }
-
+                state.entities.all = [];
+                state.limit.current = state.limit.max = 0;
+                state.filter = {
+                    search: '',
+                    region: defaultRegion,
+                };
                 state.status = 'loading';
             })
             .addCase(fetchAllCountries.rejected, (state) => {

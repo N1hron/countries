@@ -37,19 +37,13 @@ function CountryCard({ country }: Props) {
 
     return (
         <article className='country-card'>
-            <img
-                className='country-card__flag'
-                src={country.flag}
-                alt={country.name}
-            />
+            <img className='country-card__flag' src={country.flag} alt={country.name} />
             <div className='country-card__info'>
                 <h3 className='country-card__info-title'>{country.name}</h3>
-                <ul className='country-card__info-items'>
-                    {renderInfoItems()}
-                </ul>
+                <ul className='country-card__info-items'>{renderInfoItems()}</ul>
             </div>
         </article>
     );
 }
 
-export default CountryCard;
+export { CountryCard };

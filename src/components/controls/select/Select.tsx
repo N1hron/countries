@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef, useId } from 'react';
 import { KeyboardEventHandler } from 'react';
+
 import ChevronIcon from '../../../assets/icons/chevron-down.svg?react';
 
 import './select.scss';
@@ -29,6 +30,8 @@ function Select<T extends string>({
 
     const menuId = useId();
 
+    const cn = `select ${className}`.trim();
+
     useEffect(() => {
         ['click', 'focus'].forEach((eventType) => {
             window.addEventListener(eventType, (event) => {
@@ -43,6 +46,8 @@ function Select<T extends string>({
         if (selectedOption != undefined && onChange) {
             onChange(options[selectedOption]);
         }
+
+        // eslint-disable-next-line
     }, [selectedOption]);
 
     const toggleExpanded = () => setExpanded((prev) => !prev);
@@ -77,9 +82,7 @@ function Select<T extends string>({
             event.preventDefault();
 
             if (expanded && !event.altKey) {
-                setFocusedOption((prev) =>
-                    prev === options.length - 1 ? prev : prev + 1
-                );
+                setFocusedOption((prev) => (prev === options.length - 1 ? prev : prev + 1));
             } else {
                 setExpanded(true);
             }
@@ -135,8 +138,7 @@ function Select<T extends string>({
         return options.map((option, i) => {
             const id = `filter-option-${i}`;
             const className =
-                'select__option' +
-                (focusedOption === i ? ' select__option_focused' : '');
+                'select__option' + (focusedOption === i ? ' select__option_focused' : '');
 
             function handleOptionClick() {
                 setSelectedOption(i);
@@ -161,7 +163,7 @@ function Select<T extends string>({
     };
 
     return (
-        <div className={`select ${className}`.trim()}>
+        <div className={cn}>
             <div
                 className='select__input'
                 role='combobox'
@@ -169,9 +171,7 @@ function Select<T extends string>({
                 aria-controls={menuId}
                 aria-label={label}
                 aria-expanded={expanded}
-                aria-activedescendant={
-                    expanded ? `filter-option-${focusedOption}` : ''
-                }
+                aria-activedescendant={expanded ? `filter-option-${focusedOption}` : ''}
                 tabIndex={0}
                 ref={inputRef}
                 onClick={toggleExpanded}
@@ -189,4 +189,4 @@ function Select<T extends string>({
     );
 }
 
-export default Select;
+export { Select };

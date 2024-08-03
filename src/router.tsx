@@ -1,9 +1,9 @@
 import { createBrowserRouter } from 'react-router-dom';
 
-import RootRoute from './routes/rootRoute/RootRoute';
-import ErrorRoute from './routes/errorRoute/ErrorRoute';
-import Countries from './components/countries/Countries';
-import Country from './components/country/Country';
+import { RootRoute } from './routes/rootRoute/RootRoute';
+import { ErrorRoute } from './routes/errorRoute/ErrorRoute';
+import { CountriesRoute } from './routes/countriesRoute';
+import { CountryRoute } from './routes/countryRoute';
 
 const router = createBrowserRouter([
     {
@@ -13,14 +13,14 @@ const router = createBrowserRouter([
         children: [
             {
                 path: '',
-                element: <Countries />,
+                element: <CountriesRoute />,
             },
             {
                 path: ':countryName',
-                element: <Country />,
+                element: <CountryRoute />,
             },
         ],
     },
 ]);
 
-export default router;
+export { router };

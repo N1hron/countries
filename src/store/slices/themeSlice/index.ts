@@ -1,6 +1,6 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit/react';
 
-import getDefaultTheme from '../../../utils/getDefaultTheme';
+import { getDefaultTheme } from '../../../utils/getDefaultTheme';
 
 const initialState = getDefaultTheme();
 

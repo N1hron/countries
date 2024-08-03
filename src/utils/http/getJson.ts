@@ -8,4 +8,4 @@ async function getJson<T>(url: URL) {
     return (await response.json()) as T;
 }
 
-export default getJson;
+export { getJson };

@@ -18,4 +18,4 @@ function Container({ children, style, className = '' }: Props) {
     );
 }
 
-export default Container;
+export { Container };

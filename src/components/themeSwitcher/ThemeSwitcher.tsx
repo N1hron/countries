@@ -1,6 +1,6 @@
-import useTheme from '../../hooks/useTheme';
 import SunIcon from '../../assets/icons/sun.svg?react';
 import MoonIcon from '../../assets/icons/moon.svg?react';
+import { useTheme } from '../../hooks/useTheme';
 
 import './themeSwitcher.scss';
 
@@ -22,4 +22,4 @@ function ThemeSwitcher() {
     );
 }
 
-export default ThemeSwitcher;
+export { ThemeSwitcher };

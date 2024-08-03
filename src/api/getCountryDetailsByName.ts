@@ -1,5 +1,5 @@
 import { ApiURL } from './apiUrl';
-import getJson from '../utils/http/getJson';
+import { getJson } from '../utils/http/getJson';
 import { CountryInfoDetailed } from '../types/countries';
 
 const fields = [

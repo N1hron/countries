@@ -16,10 +16,7 @@ type LinkButtonProps = LinkProps & {
 type Props = ButtonProps | LinkButtonProps;
 
 function Button(props: ButtonProps, ref: Ref<HTMLButtonElement>): JSX.Element;
-function Button(
-    props: LinkButtonProps,
-    ref: Ref<HTMLAnchorElement>
-): JSX.Element;
+function Button(props: LinkButtonProps, ref: Ref<HTMLAnchorElement>): JSX.Element;
 
 function Button(props: Props, ref: Ref<HTMLButtonElement | HTMLAnchorElement>) {
     const cn = (
@@ -29,25 +26,18 @@ function Button(props: Props, ref: Ref<HTMLButtonElement | HTMLAnchorElement>) {
     ).trim();
 
     if (props.isLink) {
+        // eslint-disable-next-line
         const { isLink, mini, ...linkProps } = props as LinkButtonProps;
 
-        return (
-            <Link
-                {...linkProps}
-                ref={ref as Ref<HTMLAnchorElement>}
-                className={cn}
-            />
-        );
+        return <Link {...linkProps} ref={ref as Ref<HTMLAnchorElement>} className={cn} />;
     } else {
+        // eslint-disable-next-line
         const { isLink, mini, ...buttonProps } = props as ButtonProps;
-        return (
-            <button
-                {...buttonProps}
-                ref={ref as Ref<HTMLButtonElement>}
-                className={cn}
-            />
-        );
+
+        return <button {...buttonProps} ref={ref as Ref<HTMLButtonElement>} className={cn} />;
     }
 }
 
-export default forwardRef(Button) as unknown as typeof Button;
+const ButtonWithRef = forwardRef(Button) as unknown as typeof Button;
+
+export { ButtonWithRef as Button };

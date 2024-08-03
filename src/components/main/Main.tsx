@@ -1,6 +1,6 @@
 import { Outlet } from 'react-router-dom';
 
-import Container from '../container/Container';
+import { Container } from '../container/Container';
 
 import './main.scss';
 
@@ -14,4 +14,4 @@ function Main() {
     );
 }
 
-export default Main;
+export { Main };

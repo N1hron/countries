@@ -22,4 +22,4 @@ function useTheme() {
     return [theme, toggleTheme] as const;
 }
 
-export default useTheme;
+export { useTheme };

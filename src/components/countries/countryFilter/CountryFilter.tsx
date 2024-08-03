@@ -1,21 +1,14 @@
-import { useAppDispatch, useAppSelector } from '../../../store';
-import { selectCountriesFilter } from '../../../store/slices/countriesSlice/selectors';
-import { setFilter } from '../../../store/slices/countriesSlice';
-import { Region } from '../../../types/countries';
-import TextInput from '../../controls/textInput/TextInput';
 import SearchIcon from '../../../assets/icons/search.svg?react';
-import Select from '../../controls/select/Select';
+import { useAppDispatch, useAppSelector } from '../../../store';
+import { setFilter } from '../../../store/slices/countriesSlice';
+import { selectCountriesFilter } from '../../../store/slices/countriesSlice/selectors';
+import { Region } from '../../../types/countries';
+import { TextInput } from '../../controls/textInput/TextInput';
+import { Select } from '../../controls/select/Select';
 
 import './countryFilter.scss';
 
-const selectOptions: Region[] = [
-    'All',
-    'Africa',
-    'Americas',
-    'Asia',
-    'Europe',
-    'Oceania',
-];
+const selectOptions: Region[] = ['All', 'Africa', 'Americas', 'Asia', 'Europe', 'Oceania'];
 
 function CountryFilter() {
     const dispatch = useAppDispatch();
@@ -54,4 +47,4 @@ function CountryFilter() {
     );
 }
 
-export default CountryFilter;
+export { CountryFilter };

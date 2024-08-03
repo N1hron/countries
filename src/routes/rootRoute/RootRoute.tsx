@@ -1,7 +1,7 @@
 import { ScrollRestoration } from 'react-router-dom';
 
-import Header from '../../components/header/Header';
-import Main from '../../components/main/Main';
+import { Header } from '../../components/header/Header';
+import { Main } from '../../components/main/Main';
 
 import './rootRoute.scss';
 
@@ -15,4 +15,4 @@ function RootRoute() {
     );
 }
 
-export default RootRoute;
+export { RootRoute };

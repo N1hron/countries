@@ -1,6 +1,6 @@
 import { useAppSelector } from '../../../store';
 import { selectCountry } from '../../../store/slices/countrySlice/selectors';
-import CountryBorder from './CountryBorder';
+import { CountryBorder } from './CountryBorder';
 
 import './countryDetails.scss';
 
@@ -36,15 +36,11 @@ function CountryDetails() {
         },
         {
             title: 'Currencies',
-            description: country.currencies
-                ?.map((currency) => currency.name)
-                .join(', '),
+            description: country.currencies?.map((currency) => currency.name).join(', '),
         },
         {
             title: 'Languages',
-            description: country.languages
-                ?.map((language) => language.name)
-                .join(', '),
+            description: country.languages?.map((language) => language.name).join(', '),
         },
     ];
 
@@ -67,10 +63,7 @@ function CountryDetails() {
                 <>
                     <span>Border Countries:</span>
                     {country.borders.map((countryCode) => (
-                        <CountryBorder
-                            key={countryCode}
-                            countryCode={countryCode}
-                        />
+                        <CountryBorder key={countryCode} countryCode={countryCode} />
                     ))}
                 </>
             )
@@ -89,12 +82,10 @@ function CountryDetails() {
                     <h1>{country.name}</h1>
                     <ul>{renderMainInfoItems()}</ul>
                 </div>
-                <div className='country-details__info-borders'>
-                    {renderBorders()}
-                </div>
+                <div className='country-details__info-borders'>{renderBorders()}</div>
             </div>
         </article>
     );
 }
 
-export default CountryDetails;
+export { CountryDetails };

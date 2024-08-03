@@ -1,7 +1,7 @@
 import { useAppDispatch, useAppSelector } from '../../store';
 import { setCurrentLimit } from '../../store/slices/countriesSlice';
 import { selectCountriesLimit } from '../../store/slices/countriesSlice/selectors';
-import Button from '../buttons/button/Button';
+import { Button } from '../buttons/button/Button';
 
 function ShowMoreButton() {
     const dispatch = useAppDispatch();
@@ -14,14 +14,10 @@ function ShowMoreButton() {
 
     if (!canShowMore) return null;
     return (
-        <Button
-            isLink={false}
-            onClick={increaseLimit}
-            style={{ alignSelf: 'center' }}
-        >
+        <Button isLink={false} onClick={increaseLimit} style={{ alignSelf: 'center' }}>
             Show more
         </Button>
     );
 }
 
-export default ShowMoreButton;
+export { ShowMoreButton };

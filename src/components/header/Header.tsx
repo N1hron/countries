@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 
-import Container from '../container/Container';
-import ThemeSwitcher from '../themeSwitcher/ThemeSwitcher';
+import { Container } from '../container/Container';
+import { ThemeSwitcher } from '../themeSwitcher/ThemeSwitcher';
 
 import './header.scss';
 
@@ -18,4 +18,4 @@ function Header() {
     );
 }
 
-export default Header;
+export { Header };
