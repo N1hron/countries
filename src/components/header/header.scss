@@ -6,17 +6,27 @@
     &__container {
         display: flex;
         justify-content: space-between;
+        align-items: center;
+        gap: 1em;
     }
 
     &__title {
         font-weight: var(--fw-bolder);
-        font-size: var(--fs-xl);
+        font-size: var(--fs-lg);
         border-radius: var(--border-radius);
-        padding: 0 0.25rem;
+        padding: 0 0.25em;
 
         &:focus-visible {
             outline-offset: 0.1rem;
             outline: var(--focus-outline);
+        }
+    }
+}
+
+@media (max-width: 25rem) {
+    .header {
+        &__title {
+            font-size: var(--fs-sm);
         }
     }
 }

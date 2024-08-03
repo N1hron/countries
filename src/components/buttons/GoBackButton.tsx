@@ -8,11 +8,7 @@ const GoBackButton = (props: ButtonHTMLAttributes<HTMLButtonElement>) => {
     const navigate = useNavigate();
 
     return (
-        <Button
-            {...props}
-            style={{ ...props.style, paddingLeft: '1.84rem' }}
-            onClick={() => navigate(-1)}
-        >
+        <Button {...props} onClick={() => navigate(-1)}>
             <ArrowBackIcon />
             Back
         </Button>

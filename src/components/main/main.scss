@@ -14,3 +14,13 @@
         flex-grow: 1;
     }
 }
+
+@media (max-width: 25em) {
+    .main {
+        &__container {
+            padding-top: 2rem;
+            padding-bottom: 2rem;
+            gap: 2rem;
+        }
+    }
+}

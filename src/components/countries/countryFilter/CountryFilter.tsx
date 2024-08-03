@@ -48,6 +48,7 @@ function CountryFilter() {
                 options={selectOptions}
                 defaultOption={filter.region}
                 onChange={(region) => setRegion(region)}
+                className='country-filter__region'
             />
         </form>
     );

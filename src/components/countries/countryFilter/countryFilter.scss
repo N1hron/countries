@@ -10,3 +10,19 @@
         flex-grow: 1;
     }
 }
+
+@media (max-width: 34em) {
+    .country-filter {
+        flex-direction: column;
+        gap: 1rem;
+
+        &__search {
+            max-width: none;
+        }
+
+        &__region {
+            // flex-basis: 56px;
+            width: fit-content;
+        }
+    }
+}

@@ -23,7 +23,7 @@ function Country() {
         <>
             {status === 'success' ? (
                 <>
-                    <GoBackButton style={{ marginTop: '2rem' }} />
+                    <GoBackButton />
                     <CountryDetails />
                 </>
             ) : (

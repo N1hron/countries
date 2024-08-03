@@ -6,16 +6,19 @@
 
 :root {
     --ff: 'Nunito Sans', sans-serif;
+
     --fs-sm: 0.875rem;
     --fs-md: 1rem;
-    --fs-xl: 1.25rem;
+    --fs-lg: 1.25rem;
+    --fs-xl: 1.5rem;
     --fs-xxl: 2rem;
+
     --fw-light: 300;
     --fw-bold: 600;
     --fw-bolder: 800;
 
     --shadow: 0px 0px 0.4rem 0px #2424245c;
-    --border-radius: 0.25rem;
+    --border-radius: 0.3rem;
 
     --error: hsl(0, 59%, 43%);
     --success: hsl(132, 59%, 43%);
