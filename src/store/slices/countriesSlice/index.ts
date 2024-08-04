@@ -11,6 +11,7 @@ type State = {
     };
     limit: {
         current: number;
+        previous: number;
         max: number;
     };
     filter: {
@@ -28,6 +29,7 @@ const initialState: State = {
         filtered: [],
     },
     limit: {
+        previous: 0,
         current: 0,
         max: 0,
     },
@@ -52,6 +54,7 @@ const countriesSlice = createSlice({
                 newCurrentLimit = Math.min(1, maxLimit);
             }
 
+            state.limit.previous = state.limit.current;
             state.limit.current = newCurrentLimit;
         },
         setFilter(state, action: PayloadAction<State['filter']>) {
@@ -72,12 +75,6 @@ const countriesSlice = createSlice({
     extraReducers: (builder) => {
         builder
             .addCase(fetchAllCountries.pending, (state) => {
-                state.entities.all = [];
-                state.limit.current = state.limit.max = 0;
-                state.filter = {
-                    search: '',
-                    region: defaultRegion,
-                };
                 state.status = 'loading';
             })
             .addCase(fetchAllCountries.rejected, (state) => {
@@ -85,8 +82,10 @@ const countriesSlice = createSlice({
             })
             .addCase(fetchAllCountries.fulfilled, (state, action) => {
                 state.status = 'success';
+
                 state.entities.all = action.payload;
                 state.entities.filtered = action.payload;
+
                 state.limit.current = Math.min(8, action.payload.length);
                 state.limit.max = action.payload.length;
             });
