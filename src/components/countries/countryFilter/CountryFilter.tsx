@@ -27,7 +27,7 @@ function CountryFilter() {
     }
 
     return (
-        <form className='country-filter'>
+        <form className='country-filter' onSubmit={(event) => event.preventDefault()}>
             <TextInput
                 Icon={SearchIcon}
                 label='Enter country name'
