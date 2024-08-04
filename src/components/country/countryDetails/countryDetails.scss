@@ -83,6 +83,7 @@
 @media (max-width: 52em) {
     .country-details {
         grid-template-columns: minmax(auto, 30rem);
+        justify-content: center;
     }
 }
 
