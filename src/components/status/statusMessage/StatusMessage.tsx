@@ -7,7 +7,7 @@ import './statusMessage.scss';
 
 type Props = {
     status: Status;
-    statusCode?: number;
+    statusCode?: string | number;
     statusText?: string;
     style?: CSSProperties;
     className?: string;

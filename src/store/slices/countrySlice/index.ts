@@ -7,11 +7,13 @@ import { fetchCountryByName } from './thunks';
 type State = {
     entity: CountryInfoDetailed | null;
     status: Status;
+    statusCode: string | null;
 };
 
 const initialState: State = {
     entity: null,
     status: 'idle',
+    statusCode: null,
 };
 
 const countrySlice = createSlice({
@@ -28,9 +30,11 @@ const countrySlice = createSlice({
             .addCase(fetchCountryByName.pending, (state) => {
                 state.entity = null;
                 state.status = 'loading';
+                state.statusCode = null;
             })
-            .addCase(fetchCountryByName.rejected, (state) => {
+            .addCase(fetchCountryByName.rejected, (state, payload) => {
                 state.status = 'error';
+                state.statusCode = payload.error.code || null;
             })
             .addCase(fetchCountryByName.fulfilled, (state, action) => {
                 state.status = 'success';
