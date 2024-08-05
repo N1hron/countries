@@ -1,13 +1,18 @@
 .country-card {
     $card-width: 15rem;
 
-    width: $card-width;
     height: 100%;
-    background-color: var(--elements);
-    box-shadow: var(--shadow);
-    border-radius: var(--border-radius);
-    overflow: hidden;
-    position: relative;
+    transition: transform 0.1s;
+
+    &__content {
+        width: $card-width;
+        height: 100%;
+        background-color: var(--elements);
+        box-shadow: var(--shadow);
+        border-radius: var(--border-radius);
+        overflow: hidden;
+        position: relative;
+    }
 
     &__flag {
         height: $card-width * 0.6;

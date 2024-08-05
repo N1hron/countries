@@ -20,9 +20,15 @@
     --shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.2);
     --border-radius: 0.3rem;
 
+    --transition-duration: 0.125s;
+
     --error: hsl(0, 59%, 43%);
     --success: hsl(132, 59%, 43%);
     --info: hsl(221, 59%, 43%);
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 body {
@@ -48,6 +54,7 @@ body[data-theme='light'] {
     padding: 0;
     line-height: 1.5;
     box-sizing: border-box;
+    transition: background-color var(--transition-duration);
 }
 
 img,
@@ -80,4 +87,15 @@ h6 {
 a {
     text-decoration: none;
     color: inherit;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    * {
+        &:not(.status-icon) {
+            animation: none !important;
+        }
+
+        transition: none !important;
+        scroll-behavior: auto !important;
+    }
 }

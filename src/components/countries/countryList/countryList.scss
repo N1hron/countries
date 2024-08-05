@@ -11,16 +11,22 @@
         &:focus-visible {
             outline: none;
 
-            .country-card {
+            .country-card__content {
                 outline: var(--focus-outline);
-                scale: 1.05;
+            }
+
+            .country-card {
+                transform: scale(1.05);
             }
         }
 
         &:hover {
-            .country-card {
+            .country-card__content {
                 background-color: var(--elements-dark);
-                scale: 1.05;
+            }
+
+            .country-card {
+                transform: scale(1.05);
             }
         }
     }
