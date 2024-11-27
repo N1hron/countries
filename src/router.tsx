@@ -1,11 +1,11 @@
-import { createBrowserRouter } from 'react-router-dom';
+import { createHashRouter } from 'react-router-dom';
 
 import { RootRoute } from './routes/rootRoute/RootRoute';
 import { ErrorRoute } from './routes/errorRoute/ErrorRoute';
 import { CountriesRoute } from './routes/countriesRoute';
 import { CountryRoute } from './routes/countryRoute';
 
-const router = createBrowserRouter([
+const router = createHashRouter([
     {
         path: '/',
         element: <RootRoute />,
